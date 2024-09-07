@@ -1,0 +1,17 @@
+<div class="bg-[#FAF3EA] py-10">
+  <ul class="container mx-auto flex flex-wrap">
+    @for (item of listItem(); track item.id) {
+    <li
+      class="max-w-full flex-[0_0_100%] md:max-w-[50%] md:flex-[0_0_50%] xl:max-w-[25%] xl:flex-[0_0_25%] flex justify-center"
+    >
+      <div class="flex gap-3 py-10 max-w-72 w-full">
+        <div [ngClass]="item.icon + ' text-6xl text-[#242424]'"></div>
+        <div class="flex flex-col gap-2">
+          <h6 class="text-xl text-[#242424] font-semibold">{{ item.title }}</h6>
+          <p class="text-md text-[#898989] font-medium">{{ item.subTitle }}</p>
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

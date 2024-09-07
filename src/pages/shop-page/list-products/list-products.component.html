@@ -1,0 +1,11 @@
+<div class="mb-24">
+  <app-list-products-action />
+  <app-list-item [products]="listProducts()"></app-list-item>
+  <app-list-products-pagination
+    [pageIndex]="1"
+    [pageSize]="8"
+    [totalCount]="160"
+  ></app-list-products-pagination>
+</div>
+
+<app-shop-outstanding />

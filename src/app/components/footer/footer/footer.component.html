@@ -1,0 +1,51 @@
+<footer class="bg-white border-t w-full pt-12">
+  <div class="container mx-auto">
+    <div class="flex justify-between pb-12 border-b border-[#f92c2c]">
+      <div class="flex flex-col gap-12">
+        <div class="text-xl font-bold">Furniro.</div>
+        <div class="text-[#9F9F9F] text-sm">
+          400 University Drive Suite 200 Coral Gables, <br />
+          FL 33134 USA
+        </div>
+      </div>
+      <div class="flex flex-col gap-12">
+        <div class="text-base font-medium text-[#9F9F9F]">Links</div>
+        <ul class="flex flex-col gap-6 text-sm">
+          <li>
+            <a routerLink="/"> Home </a>
+          </li>
+          <li>
+            <a routerLink="/shop"> Shop </a>
+          </li>
+          <li>
+            <a routerLink="/about"> About </a>
+          </li>
+          <li>
+            <a routerLink="/contact"> Contact </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-12">
+        <div class="text-base font-medium text-[#9F9F9F]">Help</div>
+        <ul class="flex flex-col gap-6 text-sm">
+          <li>Payment Options</li>
+          <li>Returns</li>
+          <li>Privacy Policies</li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-12">
+        <div class="text-base font-medium text-[#9F9F9F]">Newsletter</div>
+        <div class="flex gap-4 items-center">
+          <input
+            placeholder="Enter Your Email Address"
+            type="email"
+            pInputText
+            [(ngModel)]="email"
+          />
+          <p-button type="text" label="SUBSCRIBE"></p-button>
+        </div>
+      </div>
+    </div>
+    <div class="py-9">2023 furino. All rights reverved</div>
+  </div>
+</footer>

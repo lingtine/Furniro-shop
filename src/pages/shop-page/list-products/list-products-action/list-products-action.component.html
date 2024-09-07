@@ -1,0 +1,28 @@
+<div class="bg-[#F9F1E7]">
+  <div class="container mx-auto py-4 flex justify-between">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <span class="pi pi-filter"></span>
+        <span class="text-lg">Filter</span>
+      </div>
+      <div>|</div>
+      <div>
+        Showing <span>1</span>-<span>16</span> of <span>32</span> results
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="flex items-center gap-2">
+        <span>Show</span>
+        <p-dropdown
+          [options]="listSize"
+          optionLabel="number-item"
+          placeholder="32"
+        />
+      </div>
+      <div class="flex items-center gap-2">
+        <span>Show</span>
+        <p-dropdown optionLabel="sort" placeholder="Default" />
+      </div>
+    </div>
+  </div>
+</div>

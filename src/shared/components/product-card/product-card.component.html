@@ -1,0 +1,75 @@
+<div class="relative min-w-[285px] w-full rounded-sm overflow-auto group">
+  <div class="relative">
+    <img
+      class="w-full"
+      title="card"
+      [attr.alt]="data.name"
+      [attr.src]="data.imageUrl"
+    />
+    @if (data.fullPrice) {
+    <div
+      class="absolute top-[10%] right-[10%] z-[1] bg-[#E97171] text-xs text-white px-1 py-3 rounded-full"
+    >
+      -{{ (1 - data.price / data.fullPrice).toFixed(1) | percent }}
+    </div>
+    } @else {
+    <div
+      class="absolute top-[20%] right-[10%] z-[1] bg-[#2EC1AC] text-sm text-white px-1 py-2 rounded-full"
+    >
+      new
+    </div>
+    }
+  </div>
+  <div class="p-3 bg-[#F4F5F7]">
+    <h6 class="font-semibold text-2xl pt-2">{{ data.name }}</h6>
+    <p class="text-sm text-[#898989] py-3">{{ data.description }}</p>
+
+    <div class="flex items-end justify-between pb-6">
+      <div class="font-semibold text-lg leading-none">
+        {{ data.price | currency }}
+      </div>
+      <span
+        class="line-through text-sm text-[#B0B0B0] leading-none"
+        *ngIf="data.fullPrice"
+        >{{ data.fullPrice | currency }}</span
+      >
+    </div>
+  </div>
+
+  <div
+    class="group-hover:block hidden absolute inset-0 z-[2] bg-[#3A3A3A] bg-opacity-40"
+  >
+    <div class="relative w-full h-full flex justify-center items-center">
+      <a
+        class="absolute block inset-0"
+        [routerLink]="'/product-detail/' + data.id"
+      >
+      </a>
+
+      <div class="absolute">
+        <div class="flex items-center flex-col gap-4">
+          <button
+            (click)="handleAddToCart()"
+            class="px-10 py-2 font-medium text-[#B88E2F] bg-white"
+          >
+            Add to cart
+          </button>
+          <div class="text-white flex gap-4">
+            <div class="flex items-center gap-1 text-xs">
+              <i class="pi pi-share-alt text-xs"></i>
+              <button>Share</button>
+            </div>
+            <div class="flex items-center gap-1 text-xs">
+              <i class="pi pi-arrow-right-arrow-left text-xs"></i>
+              <button>Compare</button>
+            </div>
+            <div class="flex items-center gap-1 text-xs">
+              <i class="pi pi-heart text-xs"></i>
+              <button>Like</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
