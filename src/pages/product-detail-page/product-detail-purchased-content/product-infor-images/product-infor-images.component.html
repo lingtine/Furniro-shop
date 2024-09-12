@@ -1,0 +1,18 @@
+<div class="">
+  <div class="flex gap-10">
+    <ul class="flex flex-col gap-5">
+      @for (imageScr of images(); track $index) {
+      <li class="w-20 flex bg-[#F9F1E7] items-center p-2 rounded">
+        <img class="object-contain" [src]="imageScr" alt="product image" />
+      </li>
+      }
+    </ul>
+    <div class="bg-[#F9F1E7] rounded flex items-center">
+      <img
+        class="object-contain"
+        [src]="defaultImageSrc()"
+        alt="product image"
+      />
+    </div>
+  </div>
+</div>

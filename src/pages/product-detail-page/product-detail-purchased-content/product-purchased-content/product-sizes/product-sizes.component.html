@@ -1,0 +1,18 @@
+<div class="flex flex-col gap-2">
+  <span class="text-sm text-[#9F9F9F]">Size</span>
+  <ul class="flex gap-4">
+    @for (item of listSizeProduct(); track $index) {
+    <li
+      (click)="handleSelected($index)"
+      class="cursor-pointer flex justify-center items-center uppercase text-xs w-8 h-8 rounded"
+      [ngClass]="
+        $index === selectedSize()
+          ? 'bg-primary text-white'
+          : 'bg-[#F9F1E7] text-black'
+      "
+    >
+      <span>{{ item }}</span>
+    </li>
+    }
+  </ul>
+</div>
