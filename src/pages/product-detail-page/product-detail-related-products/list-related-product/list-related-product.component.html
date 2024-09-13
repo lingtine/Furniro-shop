@@ -1,0 +1,7 @@
+<ul class="flex flex-wrap -mx-4">
+  @for (item of products(); track $index) {
+  <li class="max-w-[25%] flex-[0_0_25%] px-4">
+    <app-product-card [data]="item" />
+  </li>
+  }
+</ul>

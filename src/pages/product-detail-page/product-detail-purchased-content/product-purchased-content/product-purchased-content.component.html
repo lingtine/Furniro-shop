@@ -1,0 +1,88 @@
+<div class="flex flex-col gap-2 mb-4">
+  <h3 class="text-4xl font-normal">{{ product().name }}</h3>
+
+  <span class="text-2xl text-[#9F9F9F]"
+    >{{ product().price | currency : "Rs. " : "symbol" }}
+  </span>
+</div>
+<div class="flex gap-4 items-center">
+  <p-rating [(ngModel)]="product().rate" [readonly]="true" [cancel]="false" />
+  <div class="border-l h-7 border-[#9F9F9F]"></div>
+
+  <div class="text-[#9F9F9F] text-sm">
+    {{ product().reviews?.length }} Customer Review
+  </div>
+</div>
+<div class="max-w-sm my-4 text-sm text-justify">
+  Setting the bar as one of the loudest speakers in its class, the Kilburn is a
+  compact, stout-hearted hero with a well-balanced audio which boasts a clear
+  midrange and extended highs for a sound.
+</div>
+<app-product-sizes
+  [listSizeProduct]="product().sizes || []"
+></app-product-sizes>
+<app-product-colors [listColors]="product().colors || []"></app-product-colors>
+<div class="flex gap-4 my-4">
+  <p-inputNumber
+    [(ngModel)]="numberProduct"
+    [showButtons]="true"
+    buttonLayout="horizontal"
+    inputId="horizontal"
+    spinnerMode="horizontal"
+    [step]="1"
+    [min]="0"
+    [max]="99"
+    decrementButtonClass="bg-transparent text-black ring-0"
+    incrementButtonClass="bg-transparent text-black ring-0"
+    inputStyleClass="w-12 text-center ring-0"
+    incrementButtonIcon="pi pi-plus"
+    decrementButtonIcon="pi pi-minus"
+    mode="decimal"
+  ></p-inputNumber>
+
+  <button
+    pButton
+    label="Add To Cart"
+    title="Add To Cart"
+    [outlined]="true"
+    severity="secondary"
+  ></button>
+  <button
+    icon="pi pi-plus"
+    pButton
+    label="Compare"
+    title="Compare"
+    [outlined]="true"
+    severity="secondary"
+  ></button>
+</div>
+
+<hr class="my-10" />
+<div>
+  <ul class="flex flex-col gap-2 text-[#9F9F9F] text-base font-light">
+    <li class="flex items-center">
+      <span class="w-24">SKU</span>
+      <span>:</span>
+      <span class="px-4">{{ product().sku }}</span>
+    </li>
+    <li class="flex">
+      <span class="w-24">Category</span>
+      <span>:</span>
+      <span class="px-4">{{ product().category?.name }}</span>
+    </li>
+    <li class="flex">
+      <span class="w-24">Tags</span>
+      <span>:</span>
+      <span class="px-4">{{ product().tags?.concat() }}</span>
+    </li>
+    <li class="flex">
+      <span class="w-24">Share</span>
+      <span>:</span>
+      <span class="flex items-center gap-4 px-4">
+        <i class="pi pi-facebook"></i>
+        <i class="pi pi-instagram"></i>
+        <i class="pi pi-twitter"></i>
+      </span>
+    </li>
+  </ul>
+</div>

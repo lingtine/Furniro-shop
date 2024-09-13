@@ -1,0 +1,17 @@
+<div class="container mx-auto my-6">
+  <div class="flex flex-wrap -mx-8">
+    <section
+      class="flex-[0_0_100%] max-w-full md:flex-[0_0_50%] md:max-w-[50%] md:px-8"
+    >
+      <app-product-info-images
+        [defaultImageSrc]="product().imageUrl"
+        [images]="product().images || []"
+      />
+    </section>
+    <section
+      class="flex-[0_0_100%] max-w-full md:flex-[0_0_50%] md:max-w-[50%] md:px-8"
+    >
+      <app-product-purchased-content [product]="product()" />
+    </section>
+  </div>
+</div>

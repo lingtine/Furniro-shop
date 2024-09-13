@@ -1,0 +1,25 @@
+<section class="bg-[#F9F1E7]">
+  <div class="container mx-auto py-6">
+    <ul class="flex gap-6">
+      <li class="flex items-center gap-6">
+        <span routerLink="/" class="text-[#9F9F9F] cursor-pointer text-base">
+          Home
+        </span>
+        <i class="pi pi-angle-right"></i>
+      </li>
+      <li class="flex items-center gap-6">
+        <span
+          routerLink="/shop"
+          class="text-[#9F9F9F] cursor-pointer text-base"
+        >
+          Shop
+        </span>
+        <i class="pi pi-angle-right"></i>
+        <div class="border-r border-black h-5"></div>
+      </li>
+      <li>
+        <span class="text-base"> {{ nameProduct() }} </span>
+      </li>
+    </ul>
+  </div>
+</section>

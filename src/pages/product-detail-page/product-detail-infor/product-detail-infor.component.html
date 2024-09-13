@@ -1,0 +1,47 @@
+<div class="mx-auto container my-10">
+  <ul class="flex gap-10 justify-center">
+    <li
+      class="text-xl"
+      [ngClass]="
+        selected() === 0
+          ? 'text-black font-medium'
+          : 'text-[#9F9F9F] font-normal'
+      "
+      (click)="selected.set(0)"
+    >
+      Description
+    </li>
+    <li
+      class="text-xl"
+      [ngClass]="
+        selected() === 1
+          ? 'text-black font-medium'
+          : 'text-[#9F9F9F] font-normal'
+      "
+      (click)="selected.set(1)"
+    >
+      Additional Information
+    </li>
+    <li
+      class="text-xl"
+      [ngClass]="
+        selected() === 2
+          ? 'text-black font-medium'
+          : 'text-[#9F9F9F] font-normal'
+      "
+      (click)="selected.set(2)"
+    >
+      Reviews [{{ product().reviews?.length }}]
+    </li>
+  </ul>
+
+  <div>
+    @if(selected() === 0) {
+    <app-product-description />
+    } @else if (selected() === 1) {
+    <app-product-additional-info />
+    } @else if (selected() === 2) {
+    <app-product-reviews />
+    }
+  </div>
+</div>

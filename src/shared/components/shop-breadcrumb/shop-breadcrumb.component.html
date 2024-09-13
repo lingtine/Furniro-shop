@@ -3,11 +3,11 @@
   <div
     class="absolute z-10 flex flex-col gap-4 justify-center items-center inset-0"
   >
-    <h2 class="text-4xl font-medium">Shop</h2>
+    <h2 class="text-4xl font-medium">{{ header() || title() }}</h2>
     <div class="flex gap-3 items-center">
       <span routerLink="/" class="font-medium cursor-pointer">Home</span>
       <span class="pi pi-angle-right text-xl"></span>
-      <span class="cursor-pointer">Shop</span>
+      <span class="cursor-pointer">{{ title() }}</span>
     </div>
   </div>
 </div>
