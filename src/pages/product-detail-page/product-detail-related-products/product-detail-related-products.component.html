@@ -1,1 +1,15 @@
-<p>product-detail-related-products works!</p>
+<div class="container mx-auto my-10">
+  <h3 class="text-3xl font-medium text-center">Related Products</h3>
+  <div class="my-10">
+    <app-list-related-product [products]="products()" />
+  </div>
+
+  <div class="flex justify-center">
+    <button
+      pButton
+      label="Show More"
+      title="Show More"
+      [outlined]="true"
+    ></button>
+  </div>
+</div>
